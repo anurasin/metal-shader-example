@@ -13,8 +13,8 @@
 		7553BC94217A179400CA921C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7553BC93217A179400CA921C /* Assets.xcassets */; };
 		7553BC97217A179400CA921C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7553BC95217A179400CA921C /* LaunchScreen.storyboard */; };
 		7553BC9A217A179500CA921C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7553BC99217A179500CA921C /* main.m */; };
-		7553BCA4217A179500CA921C /* TestMetal1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7553BCA3217A179500CA921C /* TestMetal1Tests.m */; };
-		7553BCAF217A179500CA921C /* TestMetal1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7553BCAE217A179500CA921C /* TestMetal1UITests.m */; };
+		7553BCBD217A17FA00CA921C /* AppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7553BCBC217A17FA00CA921C /* AppView.m */; };
+		7553BCC0217A1D1600CA921C /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7553BCBF217A1D1600CA921C /* Shader.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +46,10 @@
 		7553BC98217A179500CA921C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7553BC99217A179500CA921C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7553BC9F217A179500CA921C /* TestMetal1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestMetal1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7553BCA3217A179500CA921C /* TestMetal1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMetal1Tests.m; sourceTree = "<group>"; };
-		7553BCA5217A179500CA921C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7553BCAA217A179500CA921C /* TestMetal1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestMetal1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7553BCAE217A179500CA921C /* TestMetal1UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMetal1UITests.m; sourceTree = "<group>"; };
-		7553BCB0217A179500CA921C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7553BCBC217A17FA00CA921C /* AppView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppView.m; sourceTree = "<group>"; };
+		7553BCBE217A189D00CA921C /* AppView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppView.h; sourceTree = "<group>"; };
+		7553BCBF217A1D1600CA921C /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				7553BC89217A179400CA921C /* TestMetal1 */,
-				7553BCA2217A179500CA921C /* TestMetal1Tests */,
-				7553BCAD217A179500CA921C /* TestMetal1UITests */,
 				7553BC88217A179400CA921C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,26 +107,11 @@
 				7553BC95217A179400CA921C /* LaunchScreen.storyboard */,
 				7553BC98217A179500CA921C /* Info.plist */,
 				7553BC99217A179500CA921C /* main.m */,
+				7553BCBC217A17FA00CA921C /* AppView.m */,
+				7553BCBE217A189D00CA921C /* AppView.h */,
+				7553BCBF217A1D1600CA921C /* Shader.metal */,
 			);
 			path = TestMetal1;
-			sourceTree = "<group>";
-		};
-		7553BCA2217A179500CA921C /* TestMetal1Tests */ = {
-			isa = PBXGroup;
-			children = (
-				7553BCA3217A179500CA921C /* TestMetal1Tests.m */,
-				7553BCA5217A179500CA921C /* Info.plist */,
-			);
-			path = TestMetal1Tests;
-			sourceTree = "<group>";
-		};
-		7553BCAD217A179500CA921C /* TestMetal1UITests */ = {
-			isa = PBXGroup;
-			children = (
-				7553BCAE217A179500CA921C /* TestMetal1UITests.m */,
-				7553BCB0217A179500CA921C /* Info.plist */,
-			);
-			path = TestMetal1UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7553BCBD217A17FA00CA921C /* AppView.m in Sources */,
 				7553BC8F217A179400CA921C /* ViewController.m in Sources */,
 				7553BC9A217A179500CA921C /* main.m in Sources */,
+				7553BCC0217A1D1600CA921C /* Shader.metal in Sources */,
 				7553BC8C217A179400CA921C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7553BCA4217A179500CA921C /* TestMetal1Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7553BCAF217A179500CA921C /* TestMetal1UITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JQ525L2MZD;
 				INFOPLIST_FILE = TestMetal1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.TestMetal1;
@@ -444,6 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JQ525L2MZD;
 				INFOPLIST_FILE = TestMetal1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.TestMetal1;
